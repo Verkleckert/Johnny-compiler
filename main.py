@@ -19,7 +19,7 @@ def print_ast(node, level=0):
 if __name__ == "__main__":
     # expression = input("Enter a mathematical expression: ")
     # expression = "(1/(2+3))*(4/(5+6))"
-    expression = "234-100+50-10"
+    expression = "12+34-12"
     tokens = tokenize_expression(expression)
     ast_root = parse_tokens(tokens)
     print("Abstract Syntax Tree (AST):")
