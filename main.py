@@ -1,7 +1,8 @@
 from parser_ import *
 from generator_ import *
 
-johnny_path = "I:\johnny\\"
+# johnny_path = "I:\johnny\\"
+johnny_path = "C:\Program Files\johnny\\"
 
 def print_ast(node, level=0):
     """
@@ -17,10 +18,12 @@ def print_ast(node, level=0):
             print_ast(child, level + 1)
 
 if __name__ == "__main__":
-    # expression = input("Enter a mathematical expression: ")
+    expression = input("Gebe eine Berechnung ein: ")
     # expression = "(1/(2+3))*(4/(5+6))"
-    expression = "234-100+50-10"
+    # expression = "234-100+50-10"
     tokens = tokenize_expression(expression)
+    print("Tokens:")
+    print(tokens)
     ast_root = parse_tokens(tokens)
     print("Abstract Syntax Tree (AST):")
     print_ast(ast_root)

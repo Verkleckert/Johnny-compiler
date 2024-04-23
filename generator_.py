@@ -27,16 +27,6 @@ def generate_data(hi, lo):
         return str(str(hi) + lo)
 
 
-def count_variables(node):
-    count = 0
-    if node.type == 'NUMBER':
-        count += 1
-    elif node.type == 'PLUS' or node.type == 'MINUS' or node.type == 'TIMES' or node.type == 'DIVIDE':
-        count += count_variables(node.children[0]) + \
-            count_variables(node.children[1])
-    return count
-
-
 def parse_ast(node):
     instruction_structure = []
     number_structure = {}
@@ -80,6 +70,7 @@ def generate_assembly(node):
     offset = calculate_offset(instruction_structure)
     instruction_structure, number_structure = apply_offset(
         instruction_structure, number_structure, offset)
+    
     for i in range(len(instruction_structure)):
         operator = instruction_structure[i][0]
         operand_1 = instruction_structure[i][1]
