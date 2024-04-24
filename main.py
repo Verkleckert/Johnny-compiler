@@ -18,9 +18,9 @@ def print_ast(node, level=0):
             print_ast(child, level + 1)
 
 if __name__ == "__main__":
-    # expression = input("Gebe eine Berechnung ein: ")
+    expression = input("Gebe eine Berechnung ein: ")
     # expression = "(1/(2+3))*(4/(5+6))"
-    expression = "12+34-12"
+    # expression = "12+34-12"
     tokens = tokenize_expression(expression)
     print("\n\n")
     print("Tokens:")
