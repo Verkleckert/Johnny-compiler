@@ -67,9 +67,9 @@ def apply_offset(instruction_structure, number_structure, offset):
 def generate_assembly(node):
     ram = {}
     instruction_structure, number_structure = parse_ast(node)
-    print("Instruction Structure:")
+    print("\nInstruction Structure:")
     print(instruction_structure)
-    print("Number Structure:")
+    print("\nNumber Structure:")
     print(number_structure)
     offset = calculate_offset(instruction_structure)
     instruction_structure, number_structure = apply_offset(
