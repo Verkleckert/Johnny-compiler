@@ -18,9 +18,9 @@ def print_ast(node, level=0):
             print_ast(child, level + 1)
 
 if __name__ == "__main__":
-    expression = input("Gebe eine Berechnung ein: ")
+    # expression = input("Gebe eine Berechnung ein: ")
     # expression = "(1/(2+3))*(4/(5+6))"
-    # expression = "12+34-12"
+    expression = "12+34-12-12+43+5"
     tokens = tokenize_expression(expression)
     print("\n\n")
     print("Tokens:")
@@ -34,9 +34,9 @@ if __name__ == "__main__":
     print("\nAssembly Instructions:")
     print(instructions)
     
-    with open(johnny_path + "parserout.ram", "w") as f:
-        for i in range(1000):
-            if instructions.get(i):
-                f.write(str(instructions.get(i)) + "\n")
-            else:
-                f.write("000\n")
+    # with open(johnny_path + "parserout.ram", "w") as f:
+    #     for i in range(1000):
+    #         if instructions.get(i):
+    #             f.write(str(instructions.get(i)) + "\n")
+    #         else:
+    #             f.write("000\n")
